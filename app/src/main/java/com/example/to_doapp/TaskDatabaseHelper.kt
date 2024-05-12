@@ -92,4 +92,17 @@ class TaskDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
         db.close()
         return Task(id,title,content)
     }
+
+    //delete task
+    fun deleteTask(taskId: Int){
+        val db = writableDatabase
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(taskId.toString())
+
+        db.delete(TABLE_NAME, whereClause, whereArgs)
+        db.close()
+
+
+    }
+
 }
