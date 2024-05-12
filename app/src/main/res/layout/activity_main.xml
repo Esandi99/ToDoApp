@@ -28,7 +28,9 @@
         android:layout_marginEnd="16dp"
         android:queryHint="Search tasks"
         app:iconifiedByDefault="false" />
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/taskRecyclerView"
         android:layout_width="match_parent"
