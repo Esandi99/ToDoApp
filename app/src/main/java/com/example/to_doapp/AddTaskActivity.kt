@@ -3,15 +3,15 @@ package com.example.to_doapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.to_doapp.databinding.ActivityAddNoteBinding
+import com.example.to_doapp.databinding.ActivityAddTaskBinding
 
-class AddNoteActivity : AppCompatActivity() {
+class AddTaskActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityAddNoteBinding
+    private lateinit var binding:ActivityAddTaskBinding
     private lateinit var db: TaskDatabaseHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddNoteBinding.inflate(layoutInflater)
+        binding = ActivityAddTaskBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         db= TaskDatabaseHelper(this)

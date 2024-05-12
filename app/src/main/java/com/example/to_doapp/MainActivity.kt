@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.AddBtn.setOnClickListener{
-            val intent= Intent(this,AddNoteActivity::class.java)
+            val intent= Intent(this,AddTaskActivity::class.java)
             startActivity(intent)
         }
 
