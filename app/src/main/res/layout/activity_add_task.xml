@@ -52,4 +52,6 @@
         android:hint="@string/Task_description_box"
         android:padding="12dp"
         android:textSize="18sp" />
+
+
 </RelativeLayout>

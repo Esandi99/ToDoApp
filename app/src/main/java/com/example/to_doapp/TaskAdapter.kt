@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.CheckBox
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
@@ -21,6 +22,8 @@ class TaskAdapter(private var tasks: List<Task>, private val context: Context) :
         val contentTextView: TextView = itemView.findViewById(R.id.contentTextView)
         val updateBtn: ImageView = itemView.findViewById(R.id.updateBtn)
         val deleteBtn: ImageView = itemView.findViewById(R.id.deleteBtn)
+        val completedCheckbox: CheckBox = itemView.findViewById(R.id.completedCheckbox)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -48,6 +51,16 @@ class TaskAdapter(private var tasks: List<Task>, private val context: Context) :
             db.deleteTask(task.id)
             refreshData(db.getAllTasks())
             Toast.makeText(holder.itemView.context, "Task Deleted", Toast.LENGTH_SHORT).show()
+        }
+        holder.completedCheckbox.isChecked = task.completed
+        holder.completedCheckbox.setOnCheckedChangeListener { _, isChecked ->
+            task.completed = isChecked
+            db.updateTask(task)
+            if (isChecked) {
+                Toast.makeText(holder.itemView.context, "Task Completed", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(holder.itemView.context, "Task Marked as Incomplete", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

@@ -8,4 +8,5 @@
     <string name="content">TASK DESCRIPTION</string>
     <string name="Edit_Task">Edit Task</string>
     <string name="SearchHint">Search tasks</string>
+    <string name="completed">Completed</string>
 </resources>

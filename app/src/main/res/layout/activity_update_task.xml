@@ -26,6 +26,7 @@ tools:context=".UpdateTaskActivity">
     android:layout_alignTop="@+id/edit_Task_Heading"
     android:layout_alignParentEnd="true"
     android:layout_marginEnd="6dp"
+    android:background="@color/radiant"
     android:src="@drawable/baseline_done_24" />
 
 <EditText
